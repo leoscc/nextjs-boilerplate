@@ -10,4 +10,10 @@ describe('<Main />', () => {
       screen.getByRole('heading', { name: /nextjs boilerplate/i })
     ).toBeInTheDocument()
   })
+
+  it('should render correctly', () => {
+    const { container } = render(<Main />)
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })
